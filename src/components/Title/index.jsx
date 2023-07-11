@@ -3,21 +3,18 @@ import { Buttons, TitleBar, TitleHeader, TitleLogo, ToggleButton } from './style
 import {SlMenu} from 'react-icons/sl'
 import {VscChromeClose, VscChromeMaximize, VscChromeMinimize, VscChromeRestore} from 'react-icons/vsc'
 
-export default function Title() {
-
+export default function Title({setToggleMenu, toggleMenu}) {
     const [isMaximized, setIsMaximized] = useState(true);
-
-
     const buttonClassName = isMaximized ? 'maximized' : 'restored';
 
     return (
         <TitleHeader>
             <TitleBar>
-                <ToggleButton id="showHideMenus">
+                <ToggleButton id="showHideMenus" onClick={()=> {setToggleMenu(!toggleMenu)}}>
                     <SlMenu size={20} color='#fff'/>
                 </ToggleButton>
                 <TitleLogo>
-                    <img src="logo192.png" alt='' />
+                    <h1>FlashOrder</h1>
                 </TitleLogo>
             </TitleBar>
             <Buttons>

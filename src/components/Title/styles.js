@@ -5,8 +5,8 @@ export const TitleHeader = styled.header`
   flex-direction: row;
   width: 100%;
   height: 40px;
-  border-bottom: 3px solid #343b48;
-  background-color: #1b1d23;
+  border-bottom: 3px solid ${(props) => props.theme.borderColor};
+  background-color: ${(props) => props.theme.primaryColor};
   user-select: none;
   -webkit-user-select: none;
 `;
@@ -28,11 +28,11 @@ export const Buttons = styled.div`
     cursor: pointer;
 
     &:hover {
-      background-color: #272c36;
+      background-color: ${(props) => props.theme.hoverTitleBar};
     }
 
     &:active {
-      background-color: #4f9fee;
+      background-color: ${(props) => props.theme.secondaryColor};
     }
   }
 `;
@@ -53,7 +53,7 @@ export const ToggleButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 45px;
+  width: 50px;
   height: 40px;
   border: none;
   outline: none;
@@ -62,19 +62,28 @@ export const ToggleButton = styled.div`
   cursor: pointer;
 
   &:hover {
-    background-color: #272c36;
+    background-color: ${(props) => props.theme.hoverTitleBar};
   }
 
   &:active {
-    background-color: #4f9fee;
+    background-color: ${(props) => props.theme.secondaryColor};
   }
 `;
 
 export const TitleLogo = styled.div`
-  margin-left: 10px;
+  margin-left: 30px;
   width: 100%;
-  line-height: 30px;
   margin-top: 5px;
   padding-bottom: 5px;
   -webkit-app-region: drag;
+
+  color: ${(props) => props.theme.secondaryColor};
+
+  display: flex;
+  align-items: center;
+
+  h1 {
+    font-size: 20px;
+    font-style: italic;
+  }
 `;
